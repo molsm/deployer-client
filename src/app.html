@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>App</title>
+</head>
+<body>
+  <section id="root"></section>
+  <script>
+      {
+          const scripts = [];
+          // Dynamically insert the DLL script in development env in the
+          // renderer process
+          // Dynamically insert the bundled app script in the renderer process
+          const port = process.env.PORT || 8080;
+          scripts.push(
+              (process.env.HOT)
+                  ? 'http://localhost:' + port + '/../dist/renderer.dev.js'
+                  : './../dist/renderer.prod.js'
+          );
+          document.write(
+              scripts
+                  .map(script => `<script defer src="${script}"><\/script>`)
+                  .join('')
+          );
+      }
+  </script>
+</body>
+</html>

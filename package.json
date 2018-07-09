@@ -1,0 +1,32 @@
+{
+  "name": "deployer-client",
+  "version": "0.1.0",
+  "description": "A minimal Electron application",
+  "main": "src/electron.js",
+  "private": true,
+  "scripts": {
+    "electron": "cross-env HOT=1 electron .",
+    "webpack-dev": "webpack-dev-server --hot --mode=development",
+    "compile": "webpack --mode production"
+  },
+  "repository": "https://github.com/molsm/deployer-client",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "cross-env": "^5.2.0",
+    "electron": "^2.0.0",
+    "electron-builder": "^20.19.1",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.14.0",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-hot-middleware": "^2.22.2"
+  },
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-hot-loader": "^4.3.3"
+  }
+}
